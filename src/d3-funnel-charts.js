@@ -35,7 +35,7 @@
 
   window.FunnelChart.prototype._getEngagementCount = function(ind){
     /* Get engagement value of a category at index 'ind' in this.data */
-    return this.data[ind][1];
+    return ind == 0 ? this.data[ind][1] : String(this.data[ind][1]) +  (' (' + Math.round(this.data[ind][1]/this.data[0][1]*1000)/10 + '%)');
   };
 
   window.FunnelChart.prototype._createPaths = function(){
